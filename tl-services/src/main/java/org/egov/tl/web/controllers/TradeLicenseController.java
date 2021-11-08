@@ -117,7 +117,7 @@ import javax.servlet.http.HttpServletRequest;
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/{servicename}/_update", "/_updatedscdetails"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/{servicename}/_updatedscdetails", "/_updatedscdetails"}, method = RequestMethod.POST)
     public ResponseEntity<TradeLicenseResponse> updateDscDetails(@Valid @RequestBody TradeLicenseRequest tradeLicenseRequest,
                                                        @PathVariable(required = false) String servicename) {
         List<TradeLicense> licenses = tradeLicenseService.updateDscDetails(tradeLicenseRequest, servicename);
@@ -129,7 +129,7 @@ import javax.servlet.http.HttpServletRequest;
     }
     
     
-    @RequestMapping(value = {"/{servicename}/_search", "/_searchdscdetails"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/{servicename}/_searchdscdetails", "/_searchdscdetails"}, method = RequestMethod.POST)
     public ResponseEntity<DigitalSignCertificateResponse> searchDscDetails(@Valid @RequestBody RequestInfoWrapper requestInfoWrapper,
                                                        @Valid @ModelAttribute TradeLicenseSearchCriteria criteria,
                                                        @PathVariable(required = false) String servicename
